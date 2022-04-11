@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Hotspots"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#ffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COVID 19 Across India"
+            android:textSize="30dp"
+            android:textColor="#000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="See the latest information on COVID cases across the states of India and view the pandemic hotspots"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmed - Average confirmed cases from Apr-2020 to Mar-2022"
+            android:textSize="10dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Impact - Log value of confirmed cases to assess the impact"
+            android:textSize="10dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webview"/>
+    </LinearLayout>
+</LinearLayout>
