@@ -26,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
 import java.util.Locale;
 
 public class COVID19_Forecast extends AppCompatActivity {
@@ -65,12 +66,17 @@ public class COVID19_Forecast extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
-                                    Log.d("response", "onResponse: " + response.getString("prediction"));
+                                    int size = response.getString("prediction").length();
+                                    String[] risk_arr = response.getString("prediction").substring(2,size-3).split(",");
+                                    String risk = risk_arr[1].substring(2);
+                                    float risk_percent = Float.parseFloat(risk_arr[0].substring(0,risk_arr[0].length()-2));
+                                    risk_percent  = (float) (Math.round(risk_percent * 100.0) / 100.0);
+                                    Log.d("response", "onResponse: " + risk + " " +String.valueOf(risk_percent));
                                     progressBar.setVisibility(View.INVISIBLE);
                                     dialog = new AlertDialog.Builder(COVID19_Forecast.this);
                                     //Replace the output down
-                                    sound.speak("Predicted action is " + response.getString("prediction"), TextToSpeech.QUEUE_FLUSH, null);
-                                    dialog.setMessage("Predicted action: " + response.getString("prediction"))
+                                    sound.speak("Predicted risk percentage: " + risk_percent+"%"+"\nRisk Category: "+risk, TextToSpeech.QUEUE_FLUSH, null);
+                                    dialog.setMessage("Predicted risk percentage: " + risk_percent+"%"+"\nRisk Category: "+risk)
                                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -78,13 +84,15 @@ public class COVID19_Forecast extends AppCompatActivity {
                                             });
                                     //Creating dialog box
                                     AlertDialog alert = dialog.create();
-//                                    if (response.getString("prediction").startsWith("Patient is safe")) {
-//                                        alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.GREEN));
-//                                    } else {
-//                                        alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.YELLOW));
-//                                    }
+                                    if (risk.equals("Very High")||risk.equals("High")) {
+                                        alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.RED));
+                                    } else if(risk.equals("Medium")) {
+                                        alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.YELLOW));
+                                    } else{
+                                        alert.getWindow().setBackgroundDrawable(new ColorDrawable(Color.GREEN));
+                                    }
                                     //Setting the title manually
-                                    alert.setTitle("*** PREDICTION RESULT ***");
+                                    alert.setTitle("RISK PREDICTION RESULT");
                                     alert.show();
                                 } catch (JSONException jsonException) {
                                     jsonException.printStackTrace();
