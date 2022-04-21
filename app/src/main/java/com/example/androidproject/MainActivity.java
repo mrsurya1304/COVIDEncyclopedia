@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.card3:
-                i = new Intent(this,Contact_Tracing.class);
+                i = new Intent(this, Nearest_Vaccination.class);
                 startActivity(i);
                 break;
         }
