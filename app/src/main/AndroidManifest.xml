@@ -3,6 +3,8 @@
     package="com.example.androidproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,13 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidProject">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Hotspots"
             android:exported="false" />
         <activity
             android:name=".COVID_IndiaTracking"
             android:exported="false" />
         <activity
-            android:name=".Contact_Tracing"
+            android:name=".Nearest_Vaccination"
             android:exported="false" />
         <activity
             android:name=".COVID19_Forecast"
@@ -27,7 +32,7 @@
             android:name=".COVID19_India"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
