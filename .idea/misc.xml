@@ -13,7 +13,11 @@
         <entry key="..\:/Users/mrsur/AndroidStudioProjects/AndroidProject/app/src/main/res/layout/fragment_tracker.xml" value="0.26403985507246375" />
         <entry key="..\:/Users/mrsur/AndroidStudioProjects/AndroidProject/app/src/main/res/layout/fragment_tracking.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/mrsur/AndroidStudioProjects/AndroidProject/app/src/main/res/layout/stateitem.xml" value="0.15729166666666666" />
+        <entry key="..\:/android_studio_dk/COVIDEncyclopedia/app/src/main/res/layout/activity_contact_tracing.xml" value="0.14130434782608695" />
         <entry key="..\:/android_studio_dk/COVIDEncyclopedia/app/src/main/res/layout/activity_covid19_forecast.xml" value="0.16666666666666666" />
+        <entry key="..\:/android_studio_dk/COVIDEncyclopedia/app/src/main/res/layout/activity_covid_india_tracking.xml" value="0.14130434782608695" />
+        <entry key="..\:/android_studio_dk/COVIDEncyclopedia/app/src/main/res/layout/activity_hotspots.xml" value="0.14130434782608695" />
+        <entry key="..\:/android_studio_dk/COVIDEncyclopedia/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
       </map>
     </option>
   </component>
