@@ -22,10 +22,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.155" />
 
+    <!--    <EditText-->
+    <!--        android:id="@+id/date"-->
+    <!--        android:layout_width="281dp"-->
+    <!--        android:layout_height="52dp"-->
+    <!--        android:fontFamily="sans-serif-black"-->
+    <!--        android:hint="Enter Date"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.498"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/place"-->
+    <!--        app:layout_constraintVertical_bias="0.098" />-->
+
     <EditText
         android:id="@+id/date"
         android:layout_width="281dp"
         android:layout_height="52dp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:fontFamily="sans-serif-black"
         android:hint="Enter Date"
         android:textSize="20sp"
@@ -34,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/place"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.131" />
 
     <ProgressBar
         android:id="@+id/progressBar"
